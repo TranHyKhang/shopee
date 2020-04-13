@@ -407,14 +407,34 @@
 	background-color: var(--white-color);
 	height: 40px;
 	flex-grow: 1;
-	border-radius: 2px;
+	border-radius: 3px;
 	display: flex;
 	align-items: center;
 }
-
+/* header cart */
 .header__cart {
 	width: 150px;
 	text-align: center;
+}
+
+.header__cart-wrap {
+	position: relative;
+	display: inline-block;
+	padding: 0 12px;
+}
+
+.header__cart-wrap:hover .header__cart-list {
+	display: block;
+}
+
+.header__cart-list::after {
+	content: "";
+	position: absolute;
+	right: 3px;
+	top:-21px;
+	border-width: 14px 20px;
+	border-style: solid;
+	border-color: transparent transparent var(--white-color) transparent;
 }
 
 .header__cart-icon {
@@ -422,9 +442,38 @@
 	font-size: 1.5rem;
 }
 
+
+.header__cart-list {
+	position: absolute;
+	width: 300px;
+	top:calc(100% + 10px);
+	right: 0px;
+	background-color: var(--white-color);
+	border-radius: 3px;
+	box-shadow: 0 2px 10px #999;
+	display: none;
+	animation: fadeIn ease-in 0.2s;
+}
+
+.header__cart-list--no-cart {
+	padding: 28px 0;
+}
+
+.header__cart-list-no-cart-msg {
+	display: block;
+	font-size: 1rem;
+	margin-top: 14px;
+	color: var(--text-color);
+}
+
+.header__cart-no-cart-img {
+	width: 50%;
+}
+
 .header__search-input-wrap {
 	flex: 1;
 	height: 100%;
+	position: relative;
 }
 
 .header__search-input {
@@ -465,7 +514,7 @@
 	background-color: var(--primary-color);
 	border: none;
 	height: 31px;
-	border-radius: 2px;
+	border-radius: 3px;
 	margin-right: 4px;
 	width:40px;
 	outline: none;
@@ -539,7 +588,47 @@
 	display: inline-block;
 }
 
+.header__search-input:focus ~ .header__search-history {
+	display: block;
+}
 
+/* Search history */
+.header__search-history {
+	position: absolute;
+	top: calc(100% + 2px);
+	left: 0;
+	width: calc(100% - 20px);
+	background-color: var(--white-color);
+	border-radius: 3px;
+	box-shadow: 0 1px 5px #999;
+	display: none;
+	overflow: hidden;
+}
+
+.header__search-history-heading {
+	margin: 8px 15px;
+	font-size: 1rem;
+	color:#999;
+	font-weight: 300;
+}
+
+.header__search-history-list {
+	padding-left: 0;
+	list-style-type: none;
+	margin: 6px 0 0;
+}
+
+.header__search-history-item {
+	height: 30px;
+	padding: 0 15px;
+}
+
+.header__search-history-item a {
+	text-decoration: none;
+	color: var(--text-color);
+	line-height: 30px;
+	display: block;
+}
 
 
 
