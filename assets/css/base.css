@@ -6,7 +6,7 @@
 	--border-color:#c0baba;
 
 	--navbar-height:39px;
-	--header-height:120px;
+	--header-height:100px;
 	--header-with-search-height: calc(var(--header-height) - var(--navbar-height));
 }
 
@@ -27,7 +27,7 @@ p {
 }
 
 .grid {
-	width:1000px;
+	width:900px;
 	max-width:100%;
 	margin:0 auto;
 }
